@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import re
 import sys
 import string
@@ -31,12 +31,11 @@ class PCard(Card):
 ################
 # NUMERIC CARDS
 ################
-class NumericCard(Card):
+class NCard(Card):
     def __init__(self, store_loc, value):
         self.store_loc = store_loc
         self.value = value
 
-class NCard(NumericCard):
     def __str__(self):
         return "N{0} {1}".format(str(self.store_loc), str(self.value))
 
@@ -95,6 +94,13 @@ def get_tmp_varname():
         if not does_var_exist(rand_string):
             return rand_string
 
+def is_integer(string):
+    try:
+        int(string)
+        return True
+    except ValueError:
+        return False
+
 def compile(source):
     """ Returns a list of Cards """
     cards = []
@@ -127,19 +133,19 @@ def compile(source):
                 log("dest_var does not exist. Creating it.")
                 dest_loc = malloc(dest_var)
             else:
-                dest_loc = varname_to_store_loc(dest_var)
+                dest_loc = varname_to_store_loc[dest_var]
 
             # RHS
-            if operand1.isdigit(): # malloc a literal int
+            if is_integer(operand1): # malloc a literal int
                 log("op1 is a literal")
                 op1_is_literal = True
                 n = int(operand1)
                 operand1 = get_tmp_varname()
-                malloc(operand1)
+                loc1 = malloc(operand1)
                 set_val(operand1, n)
 
                 # Add the cards
-                cards.append(NCard(loc2, n))
+                cards.append(NCard(loc1, n))
             else:
                 log("op1 is a variable")
                 op1_is_literal = False
@@ -149,7 +155,7 @@ def compile(source):
                     log("{} hasn't been assigned yet.".format(operand1))
                     sys.exit(1)
 
-            if operand2.isdigit(): # malloc a literal int
+            if is_integer(operand2): # malloc a literal int
                 log("op2 is a literal")
                 op2_is_literal = True
                 n = int(operand2)
