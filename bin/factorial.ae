@@ -1,0 +1,91 @@
+. Begin variable assignment x (loc0) = 7
+. Begin expr "7" -> loc0
+N0 7
+. Begin variable assignment acc (loc1) = 1
+. Begin expr "1" -> loc1
+N1 1
+. Begin while loop for "!(x == 0)"
+. Begin expr "!(x == 0)" -> loc2
+. Begin expr "(x == 0)" -> loc3
+. Begin expr "x" -> loc4
+N5 0
++
+L0
+L5
+S4
+. Begin expr "0" -> loc5
+N5 0
+. Begin loc4 == loc5 -> loc3
+-
+L4
+L5
+S6
+/
+L4
+L6
+CF?1
+CF+2
+N3 1
+CF+1
+N3 0
+. Begin !loc3 -> loc2
+/
+L3
+L3
+CF?1
+CF+2
+N2 1
+CF+1
+N2 0
+N3 1
+/
+L3
+L2
+CF?35
+. Begin variable assignment acc (loc1) = (acc * x)
+. Begin expr "(acc * x)" -> loc1
+. Begin expr "acc" -> loc3
+N4 0
++
+L1
+L4
+S3
+. Begin expr "x" -> loc4
+N5 0
++
+L0
+L5
+S4
+. Begin loc3 + loc4 -> loc1
+*
+L3
+L4
+S1
+. Begin variable assignment x (loc0) = (x - 1)
+. Begin expr "(x - 1)" -> loc0
+. Begin expr "x" -> loc3
+N4 0
++
+L0
+L4
+S3
+. Begin expr "1" -> loc4
+N4 1
+. Begin loc3 + loc4 -> loc0
+-
+L3
+L4
+S0
+CB+72
+. Begin print statement for "acc"
+. Begin expr "acc" -> loc2
+N3 0
++
+L1
+L3
+S2
+N3 0
++
+L2
+L3
+P

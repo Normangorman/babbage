@@ -1,0 +1,58 @@
+. Begin variable assignment x (loc0) = 3
+. Begin expr "3" -> loc0
+N0 3
+. Begin variable assignment z (loc1) = 4
+. Begin expr "4" -> loc1
+N1 4
+. Begin print statement for "((z % 2) + (x * (3 - z)))"
+. Begin expr "((z % 2) + (x * (3 - z)))" -> loc2
+. Begin expr "(z % 2)" -> loc3
+. Begin expr "z" -> loc4
+N5 0
++
+L1
+L5
+S4
+. Begin expr "2" -> loc5
+N5 2
+. Begin loc4 % loc5 -> loc3
+/
+L4
+L5
+S3
+. Begin expr "(x * (3 - z))" -> loc4
+. Begin expr "x" -> loc5
+N6 0
++
+L0
+L6
+S5
+. Begin expr "(3 - z)" -> loc6
+. Begin expr "3" -> loc7
+N7 3
+. Begin expr "z" -> loc8
+N9 0
++
+L1
+L9
+S8
+. Begin loc7 + loc8 -> loc6
+-
+L7
+L8
+S6
+. Begin loc5 + loc6 -> loc4
+*
+L5
+L6
+S4
+. Begin loc3 + loc4 -> loc2
++
+L3
+L4
+S2
+N3 0
++
+L2
+L3
+P

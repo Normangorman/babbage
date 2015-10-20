@@ -1,0 +1,25 @@
+. Begin if block for "1"
+. Begin expr "1" -> loc0
+N0 1
+N1 1
+/
+L1
+L0
+CF?9
+. Begin print statement for "1"
+. Begin expr "1" -> loc1
+N1 1
+N2 0
++
+L1
+L2
+P
+H
+. Begin print statement for "0"
+. Begin expr "0" -> loc0
+N0 0
+N1 0
++
+L0
+L1
+P

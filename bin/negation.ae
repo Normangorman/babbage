@@ -1,0 +1,71 @@
+. Begin print statement for "0"
+. Begin expr "0" -> loc0
+N0 0
+N1 0
++
+L0
+L1
+P
+. Begin print statement for "!0"
+. Begin expr "!0" -> loc0
+. Begin expr "0" -> loc1
+N1 0
+. Begin !loc1 -> loc0
+/
+L1
+L1
+CF?1
+CF+2
+N0 1
+CF+1
+N0 0
+N1 0
++
+L0
+L1
+P
+. Begin variable assignment x (loc0) = 1
+. Begin expr "1" -> loc0
+N0 1
+. Begin print statement for "x"
+. Begin expr "x" -> loc1
+N2 0
++
+L0
+L2
+S1
+N2 0
++
+L1
+L2
+P
+. Begin print statement for "!(x - 1)"
+. Begin expr "!(x - 1)" -> loc1
+. Begin expr "(x - 1)" -> loc2
+. Begin expr "x" -> loc3
+N4 0
++
+L0
+L4
+S3
+. Begin expr "1" -> loc4
+N4 1
+. Begin loc3 + loc4 -> loc2
+-
+L3
+L4
+S2
+. Begin !loc2 -> loc1
+/
+L2
+L2
+CF?1
+CF+2
+N1 1
+CF+1
+N1 0
+N2 0
++
+L1
+L2
+P

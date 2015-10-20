@@ -1,0 +1,87 @@
+. Begin variable assignment x (loc0) = 1
+. Begin expr "1" -> loc0
+N0 1
+. Begin variable assignment y (loc1) = 1
+. Begin expr "1" -> loc1
+N1 1
+. Begin variable assignment same (loc2) = (x == y)
+. Begin expr "(x == y)" -> loc2
+. Begin expr "x" -> loc3
+N4 0
++
+L0
+L4
+S3
+. Begin expr "y" -> loc4
+N5 0
++
+L1
+L5
+S4
+. Begin loc3 == loc4 -> loc2
+-
+L3
+L4
+S5
+/
+L3
+L5
+CF?1
+CF+2
+N2 1
+CF+1
+N2 0
+. Begin print statement for "same"
+. Begin expr "same" -> loc3
+N4 0
++
+L2
+L4
+S3
+N4 0
++
+L3
+L4
+P
+. Begin variable assignment z (loc3) = 2
+. Begin expr "2" -> loc3
+N3 2
+. Begin variable assignment notsame (loc4) = (x == z)
+. Begin expr "(x == z)" -> loc4
+. Begin expr "x" -> loc5
+N6 0
++
+L0
+L6
+S5
+. Begin expr "z" -> loc6
+N7 0
++
+L3
+L7
+S6
+. Begin loc5 == loc6 -> loc4
+-
+L5
+L6
+S7
+/
+L5
+L7
+CF?1
+CF+2
+N4 1
+CF+1
+N4 0
+. Begin print statement for "notsame"
+. Begin expr "notsame" -> loc5
+N6 0
++
+L4
+L6
+S5
+N6 0
++
+L5
+L6
+P

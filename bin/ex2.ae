@@ -1,0 +1,30 @@
+. Begin variable assignment x (loc0) = 3
+. Begin expr "3" -> loc0
+N0 3
+. Begin variable assignment x (loc0) = (-1 * x)
+. Begin expr "(-1 * x)" -> loc0
+. Begin expr "-1" -> loc1
+N1 -1
+. Begin expr "x" -> loc2
+N3 0
++
+L0
+L3
+S2
+. Begin loc1 + loc2 -> loc0
+*
+L1
+L2
+S0
+. Begin print statement for "x"
+. Begin expr "x" -> loc1
+N2 0
++
+L0
+L2
+S1
+N2 0
++
+L1
+L2
+P

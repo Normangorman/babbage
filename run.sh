@@ -3,6 +3,6 @@
 mkdir -p bin
 
 base=$(basename $1)
-compiled_file="bin/${base%.bab}.eng"
+compiled_file="bin/${base%.bab}.ae"
 ./babbage.py $1 > $compiled_file
 java -cp engine aes $compiled_file

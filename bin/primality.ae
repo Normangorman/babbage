@@ -1,0 +1,136 @@
+. Begin variable assignment x (loc0) = 47
+. Begin expr "47" -> loc0
+N0 47
+. Begin variable assignment limit (loc1) = (x / 2)
+. Begin expr "(x / 2)" -> loc1
+. Begin expr "x" -> loc2
+N3 0
++
+L0
+L3
+S2
+. Begin expr "2" -> loc3
+N3 2
+. Begin loc2 / loc3 -> loc1
+/
+L2
+L3
+S1'
+. Begin variable assignment i (loc2) = 2
+. Begin expr "2" -> loc2
+N2 2
+. Begin while loop for "!(i == limit)"
+. Begin expr "!(i == limit)" -> loc3
+. Begin expr "(i == limit)" -> loc4
+. Begin expr "i" -> loc5
+N6 0
++
+L2
+L6
+S5
+. Begin expr "limit" -> loc6
+N7 0
++
+L1
+L7
+S6
+. Begin loc5 == loc6 -> loc4
+-
+L5
+L6
+S7
+/
+L5
+L7
+CF?1
+CF+2
+N4 1
+CF+1
+N4 0
+. Begin !loc4 -> loc3
+/
+L4
+L4
+CF?1
+CF+2
+N3 1
+CF+1
+N3 0
+N4 1
+/
+L4
+L3
+CF?65
+. Begin if block for "((x % i) == 0)"
+. Begin expr "((x % i) == 0)" -> loc4
+. Begin expr "(x % i)" -> loc5
+. Begin expr "x" -> loc6
+N7 0
++
+L0
+L7
+S6
+. Begin expr "i" -> loc7
+N8 0
++
+L2
+L8
+S7
+. Begin loc6 % loc7 -> loc5
+/
+L6
+L7
+S5
+. Begin expr "0" -> loc6
+N6 0
+. Begin loc5 == loc6 -> loc4
+-
+L5
+L6
+S7
+/
+L5
+L7
+CF?1
+CF+2
+N4 1
+CF+1
+N4 0
+N5 1
+/
+L5
+L4
+CF?9
+. Begin print statement for "0"
+. Begin expr "0" -> loc5
+N5 0
+N6 0
++
+L5
+L6
+P
+H
+. Begin variable assignment i (loc2) = (i + 1)
+. Begin expr "(i + 1)" -> loc2
+. Begin expr "i" -> loc4
+N5 0
++
+L2
+L5
+S4
+. Begin expr "1" -> loc5
+N5 1
+. Begin loc4 + loc5 -> loc2
++
+L4
+L5
+S2
+CB+106
+. Begin print statement for "1"
+. Begin expr "1" -> loc3
+N3 1
+N4 0
++
+L3
+L4
+P
