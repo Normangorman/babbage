@@ -1,3 +1,8 @@
 #!/bin/bash
-# Run the compiled .eng file with aes
-java -cp engine aes -l -t $1
+# Compile a .bab file and then run it with aes
+mkdir -p bin
+
+base=$(basename $1)
+compiled_file="bin/${base%.bab}.eng"
+./babbage.py $1 > $compiled_file
+java -cp engine aes $compiled_file

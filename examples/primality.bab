@@ -1,0 +1,16 @@
+# Tests whether a given number is prime
+x = 47
+# test possible factors up to this limit
+limit = (x / 2)
+
+i = 2
+while !(i == limit)
+    if ((x % i) == 0)
+        print 0
+        halt
+    end
+    
+    i = (i + 1)
+end
+
+print 1

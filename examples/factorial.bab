@@ -1,0 +1,10 @@
+# computes 7!
+x = 7
+acc = 1
+
+while !(x == 0)
+    acc = (acc * x)
+    x = (x - 1)
+end
+
+print acc

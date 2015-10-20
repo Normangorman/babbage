@@ -1,0 +1,6 @@
+print 0
+print !0
+
+x = 1
+print x
+print !(x - 1)
