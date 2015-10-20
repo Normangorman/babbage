@@ -1,5 +1,21 @@
 This project is a compiler for a high level programming language, coined BabbageScript, which compiles down into low-level analytical engine instructions.
 
+Usage
+=======
+To compile a program:
+
+    python3 babbage.py myprogram.bab > myprogram.ae
+
+To run a program with the simulator:
+
+    java -cp engine aes myprogram.ae
+
+Alternatively, the script *run.sh* will compile and then immediately execute your program:
+
+    ./run.sh myprogram.bab
+
+Info
+=======
 It provides abstractions including:
 * Automatic memory management
 * Nested expressions e.g. ((y + 2) / x)
